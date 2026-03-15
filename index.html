@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NapTapGo — New Age Affordable Luxury Pod Hotels</title>
+  <meta name="description" content="NapTapGo offers smart, affordable luxury pod hotel stays across India. Hourly bookings, flexible check-in, and premium comfort. As seen on Shark Tank India Season 5.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%230a0a1a'/><text x='50' y='38' text-anchor='middle' font-size='28' font-weight='bold' fill='%23f0ece4' font-family='serif'>NAP</text><text x='50' y='64' text-anchor='middle' font-size='28' font-weight='bold' fill='%23d4a853' font-family='serif'>TAP</text><text x='50' y='90' text-anchor='middle' font-size='28' font-weight='bold' fill='%23f0ece4' font-family='serif'>GO</text></svg>" type="image/svg+xml">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__cube">
+        <div class="loader__cube-face"></div>
+        <div class="loader__cube-face"></div>
+        <div class="loader__cube-face"></div>
+        <div class="loader__cube-face"></div>
+        <div class="loader__cube-face"></div>
+        <div class="loader__cube-face"></div>
+      </div>
+      <div class="loader__logo">
+        <span class="loader__letter" style="--i:0">N</span>
+        <span class="loader__letter" style="--i:1">a</span>
+        <span class="loader__letter" style="--i:2">p</span>
+        <span class="loader__letter loader__letter--accent" style="--i:3">T</span>
+        <span class="loader__letter" style="--i:4">a</span>
+        <span class="loader__letter" style="--i:5">p</span>
+        <span class="loader__letter loader__letter--accent" style="--i:6">G</span>
+        <span class="loader__letter" style="--i:7">o</span>
+      </div>
+      <div class="loader__percent" id="loaderPercent">0%</div>
+      <div class="loader__bar">
+        <div class="loader__bar-fill" id="loaderBarFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-nap">Nap</span><span class="nav__logo-tap">Tap</span><span class="nav__logo-go">Go</span>
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#about" class="nav__link">Concept</a></li>
+        <li><a href="#how-it-works" class="nav__link">How It Works</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#locations" class="nav__link">Locations</a></li>
+        <li><a href="#gallery" class="nav__link">Gallery</a></li>
+        <li><a href="#reviews" class="nav__link">Reviews</a></li>
+        <li><a href="#pricing" class="nav__link">Pricing</a></li>
+        <li><a href="#franchise" class="nav__link">Franchise</a></li>
+        <li><a href="#book" class="nav__cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas class="hero__particles" id="heroParticles"></canvas>
+    <div class="hero__gradient"></div>
+    <div class="hero__content">
+      <div class="hero__badge animate-on-scroll">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        As Seen on Shark Tank India S5
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">
+          <span class="hero__title-word" data-animate="reveal">Nap</span>
+          <span class="hero__title-dot">·</span>
+          <span class="hero__title-word" data-animate="reveal">Tap</span>
+          <span class="hero__title-dot">·</span>
+          <span class="hero__title-word" data-animate="reveal">Go</span>
+        </span>
+      </h1>
+      <p class="hero__tagline" id="tagline"></p>
+      <p class="hero__sub">New Age Affordable Luxury Pod Hotels across India</p>
+      <div class="hero__actions">
+        <a href="#book" class="btn btn--primary btn--glow">
+          <span>Book Your Pod</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#about" class="btn btn--outline">
+          <span>Explore</span>
+        </a>
+      </div>
+      <div class="hero__image-float">
+        <img src="images/hero-pod.png" alt="NapTapGo Pod Hotel — Building, Lounge & Pod Corridor" loading="eager">
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="104">0</span>
+          <span class="hero__stat-label">Pods</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="3">0</span>
+          <span class="hero__stat-label">Locations</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="10000">0</span>
+          <span class="hero__stat-label">Happy Guests</span>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>Scroll to explore</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Concept Section -->
+  <section class="about section-3d" id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">The Concept</span>
+        <h2 class="section-title">What is <span class="text-gold">NapTapGo</span>?</h2>
+        <p class="section-desc">A revolution in travel accommodation — smart, affordable luxury that fits your schedule, not the other way around.</p>
+      </div>
+      <div class="about__grid">
+        <div class="about__card animate-on-scroll tilt-3d" data-delay="0">
+          <div class="tilt-3d__shine"></div>
+          <div class="about__card-icon about__card-icon--nap">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 48h48M8 48V28M56 48V36H28v12" class="about__icon-path"/>
+              <path d="M8 36h20" class="about__icon-path"/>
+              <circle cx="20" cy="28" r="6" class="about__icon-path"/>
+              <path d="M32 20c0 0 4-4 8-4s8 4 8 4" class="about__icon-path about__zzz" style="--z:1"/>
+              <path d="M36 14c0 0 3-3 6-3s6 3 6 3" class="about__icon-path about__zzz" style="--z:2"/>
+              <path d="M40 8c0 0 2-2 4-2s4 2 4 2" class="about__icon-path about__zzz" style="--z:3"/>
+            </svg>
+          </div>
+          <h3 class="about__card-letter">N<span class="text-gold">AP</span></h3>
+          <h4 class="about__card-title">Cosy Nap</h4>
+          <p class="about__card-desc">Premium sleeping pods designed for ultimate comfort. Memory foam mattresses, blackout curtains, and climate control for the perfect rest — whether it's 2 hours or overnight.</p>
+        </div>
+        <div class="about__card animate-on-scroll tilt-3d" data-delay="200">
+          <div class="tilt-3d__shine"></div>
+          <div class="about__card-icon about__card-icon--tap">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 16v32c0 4 4 8 12 8s12-4 12-8V16" class="about__icon-path"/>
+              <path d="M20 16c0-4 4-8 12-8s12 4 12 8" class="about__icon-path"/>
+              <path d="M26 24v-4M32 24v-6M38 24v-4" class="about__icon-path"/>
+              <path d="M24 36c2 2 6 4 8 4s6-2 8-4" class="about__icon-path about__water" style="--w:1"/>
+              <path d="M22 42c3 2 7 4 10 4s7-2 10-4" class="about__icon-path about__water" style="--w:2"/>
+            </svg>
+          </div>
+          <h3 class="about__card-letter">T<span class="text-gold">AP</span></h3>
+          <h4 class="about__card-title">Fresh Tap</h4>
+          <p class="about__card-desc">Freshen up with hot showers, premium toiletries, and spotless washrooms. Every facility is sanitized and maintained to five-star hygiene standards.</p>
+        </div>
+        <div class="about__card animate-on-scroll tilt-3d" data-delay="400">
+          <div class="tilt-3d__shine"></div>
+          <div class="about__card-icon about__card-icon--go">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="20" class="about__icon-path"/>
+              <path d="M32 12v10l8 8" class="about__icon-path"/>
+              <path d="M48 32h8M8 32h8M32 48v8M32 4v4" class="about__icon-path"/>
+              <path d="M52 20l4-4M8 44l4-4M52 44l4 4M8 20l4 4" class="about__icon-path about__tick" style="--t:1"/>
+            </svg>
+          </div>
+          <h3 class="about__card-letter">G<span class="text-gold">O</span></h3>
+          <h4 class="about__card-title">Ready to Go</h4>
+          <p class="about__card-desc">Refreshed, recharged, and ready. Quick checkout, secure luggage storage, and prime locations near transit hubs mean you're always on time for your next adventure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how" id="how-it-works">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">How It <span class="text-gold">Works</span></h2>
+        <p class="section-desc">Three effortless steps to your perfect rest stop</p>
+      </div>
+      <div class="how__timeline">
+        <div class="how__line">
+          <div class="how__line-fill" id="timelineFill"></div>
+        </div>
+        <div class="how__step animate-on-scroll" data-delay="0">
+          <div class="how__step-number">
+            <span>01</span>
+          </div>
+          <div class="how__step-content">
+            <div class="how__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="6" y="6" width="36" height="36" rx="4"/>
+                <path d="M6 18h36"/>
+                <path d="M18 6v12"/>
+                <circle cx="16" cy="28" r="2" fill="currentColor"/>
+                <circle cx="24" cy="28" r="2" fill="currentColor"/>
+                <circle cx="32" cy="28" r="2" fill="currentColor"/>
+                <circle cx="16" cy="36" r="2" fill="currentColor"/>
+                <circle cx="24" cy="36" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Book & Relax</h3>
+            <p>Choose your pod, pick your hours, and book instantly through our app or website. Flexible hourly slots that fit your schedule.</p>
+          </div>
+        </div>
+        <div class="how__step animate-on-scroll" data-delay="200">
+          <div class="how__step-number">
+            <span>02</span>
+          </div>
+          <div class="how__step-content">
+            <div class="how__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="10" y="4" width="28" height="40" rx="4"/>
+                <path d="M18 8h12"/>
+                <circle cx="24" cy="28" r="8"/>
+                <path d="M20 28l3 3 5-6"/>
+              </svg>
+            </div>
+            <h3>Effortless Check-in</h3>
+            <p>Walk in, scan your QR code, and your pod unlocks automatically. No queues, no paperwork — just seamless access to your private space.</p>
+          </div>
+        </div>
+        <div class="how__step animate-on-scroll" data-delay="400">
+          <div class="how__step-number">
+            <span>03</span>
+          </div>
+          <div class="how__step-content">
+            <div class="how__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 36h40"/>
+                <path d="M8 36V22h12v14"/>
+                <path d="M20 36V18h20v18"/>
+                <path d="M28 26h4v6h-4z" fill="currentColor" opacity="0.3"/>
+                <path d="M24 14l-4-6M36 14l4-6M30 12v-8"/>
+              </svg>
+            </div>
+            <h3>Comfortable Stay</h3>
+            <p>Enjoy smart climate control, high-speed WiFi, USB charging, and premium bedding. Your pod is your private sanctuary, however long you stay.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pod Experience Section -->
+  <section class="experience section-3d" id="experience">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Premium Comfort</span>
+        <h2 class="section-title">The Pod <span class="text-gold">Experience</span></h2>
+        <p class="section-desc">Every detail engineered for your comfort</p>
+      </div>
+      <div class="experience__showcase">
+        <!-- Pod Illustration -->
+        <div class="experience__pod animate-on-scroll">
+          <div class="experience__image-stack">
+            <div class="experience__img experience__img--main">
+              <img src="images/pod-noida.jpg" alt="NapTapGo Noida — Pod Hotel Building" loading="lazy">
+            </div>
+            <div class="experience__img experience__img--secondary">
+              <img src="images/why-ntg.png" alt="NapTapGo Building Exterior" loading="lazy">
+            </div>
+            <div class="experience__img-glow"></div>
+          </div>
+        </div>
+        <!-- Features Grid -->
+        <div class="experience__features">
+          <div class="experience__feature animate-on-scroll" data-delay="0">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="4" y="8" width="32" height="24" rx="2"/>
+                <path d="M12 20h16M12 26h8"/>
+                <circle cx="30" cy="14" r="2"/>
+                <path d="M4 16h32"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Smart Controls</h4>
+              <p>In-pod tablet to control lighting, AC, and entertainment</p>
+            </div>
+          </div>
+          <div class="experience__feature animate-on-scroll" data-delay="100">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 32h32M8 32V16c0-1 1-2 2-2h20c1 0 2 1 2 2v16"/>
+                <path d="M12 22h16v4H12z" fill="currentColor" opacity="0.15"/>
+                <path d="M16 18v-2M24 18v-2M20 18v-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Comfort Sleep</h4>
+              <p>Memory foam mattress, premium linen, blackout privacy</p>
+            </div>
+          </div>
+          <div class="experience__feature animate-on-scroll" data-delay="200">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="6" y="10" width="28" height="22" rx="3"/>
+                <path d="M14 10V6h12v4"/>
+                <circle cx="20" cy="22" r="4"/>
+                <path d="M20 20v2l1.5 1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Secure Storage</h4>
+              <p>Digital lockers for luggage and valuables, CCTV monitored</p>
+            </div>
+          </div>
+          <div class="experience__feature animate-on-scroll" data-delay="300">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M8 32c0-8 6-12 12-12s12 4 12 12"/>
+                <circle cx="20" cy="14" r="6"/>
+                <path d="M14 28h12M16 32h8"/>
+              </svg>
+            </div>
+            <div>
+              <h4>24/7 Cafeteria</h4>
+              <p>Fresh meals, snacks, and beverages available round the clock</p>
+            </div>
+          </div>
+          <div class="experience__feature animate-on-scroll" data-delay="400">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="28" r="5"/>
+                <circle cx="30" cy="28" r="5"/>
+                <path d="M17 28h8M7 28l4-12h10l2 4h6"/>
+                <path d="M11 16h8"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Easy Commute</h4>
+              <p>Prime locations near transit hubs, airports, and attractions</p>
+            </div>
+          </div>
+          <div class="experience__feature animate-on-scroll" data-delay="500">
+            <div class="experience__feature-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M20 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Property Navigation</h4>
+              <p>Digital signage and app-based navigation within the property</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="locations section-3d" id="locations">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title">Our <span class="text-gold">Locations</span></h2>
+        <p class="section-desc">Growing across India's most vibrant cities</p>
+      </div>
+      <div class="locations__grid">
+        <!-- Active Locations -->
+        <div class="locations__card animate-on-scroll" data-delay="0">
+          <div class="locations__card-inner">
+            <div class="locations__card-front locations__card-front--img" style="--card-bg: url('images/pod-noida.jpg')">
+              <div class="locations__card-img-overlay"></div>
+              <div class="locations__card-pin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5" fill="var(--gold)"/>
+                </svg>
+              </div>
+              <div class="locations__card-status locations__card-status--active">Live</div>
+              <h3>Noida</h3>
+              <p class="locations__card-area">Sector 63</p>
+              <div class="locations__card-pods">
+                <span class="locations__pod-count" data-count="20">0</span>
+                <span>Pods</span>
+              </div>
+              <span class="locations__flip-hint">Hover for details</span>
+            </div>
+            <div class="locations__card-back">
+              <h3>Noida — Sector 63</h3>
+              <ul>
+                <li>20 Premium Pods</li>
+                <li>Near Metro Station</li>
+                <li>Corporate Hub Location</li>
+                <li>24/7 Cafeteria</li>
+                <li>Secure Parking</li>
+              </ul>
+              <a href="#book" class="btn btn--small btn--primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="locations__card animate-on-scroll" data-delay="150">
+          <div class="locations__card-inner">
+            <div class="locations__card-front locations__card-front--img" style="--card-bg: url('images/pod-amritsar.jpg')">
+              <div class="locations__card-img-overlay"></div>
+              <div class="locations__card-pin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5" fill="var(--gold)"/>
+                </svg>
+              </div>
+              <div class="locations__card-status locations__card-status--active">Live</div>
+              <h3>Amritsar</h3>
+              <p class="locations__card-area">Golden Temple</p>
+              <div class="locations__card-pods">
+                <span class="locations__pod-count" data-count="57">0</span>
+                <span>Pods</span>
+              </div>
+              <span class="locations__flip-hint">Hover for details</span>
+            </div>
+            <div class="locations__card-back">
+              <h3>Amritsar — Golden Temple</h3>
+              <ul>
+                <li>57 Premium Pods</li>
+                <li>Walking Distance to Golden Temple</li>
+                <li>Pilgrim-Friendly Amenities</li>
+                <li>Luggage Storage</li>
+                <li>Traditional Cuisine Cafeteria</li>
+              </ul>
+              <a href="#book" class="btn btn--small btn--primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="locations__card animate-on-scroll" data-delay="300">
+          <div class="locations__card-inner">
+            <div class="locations__card-front locations__card-front--img" style="--card-bg: url('images/pod-katra.jpg')">
+              <div class="locations__card-img-overlay"></div>
+              <div class="locations__card-pin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5" fill="var(--gold)"/>
+                </svg>
+              </div>
+              <div class="locations__card-status locations__card-status--upcoming">Apr 2026</div>
+              <h3>Katra</h3>
+              <p class="locations__card-area">Vaishno Devi</p>
+              <div class="locations__card-pods">
+                <span class="locations__pod-count" data-count="27">0</span>
+                <span>Pods</span>
+              </div>
+              <span class="locations__flip-hint">Hover for details</span>
+            </div>
+            <div class="locations__card-back">
+              <h3>Katra — Opening April 2026</h3>
+              <ul>
+                <li>27 Premium Pods</li>
+                <li>Near Vaishno Devi Base</li>
+                <li>Pilgrim Rest Point</li>
+                <li>Early Bird Discounts</li>
+                <li>Pre-book Available Now</li>
+              </ul>
+              <a href="#book" class="btn btn--small btn--primary">Pre-Book</a>
+            </div>
+          </div>
+        </div>
+        <!-- Coming Soon Locations -->
+        <div class="locations__card locations__card--coming animate-on-scroll" data-delay="100">
+          <div class="locations__card-inner">
+            <div class="locations__card-front">
+              <div class="locations__card-badge">Coming Soon</div>
+              <h3>Gurugram</h3>
+              <p class="locations__card-area">Cyber Hub</p>
+            </div>
+          </div>
+        </div>
+        <div class="locations__card locations__card--coming animate-on-scroll" data-delay="200">
+          <div class="locations__card-inner">
+            <div class="locations__card-front">
+              <div class="locations__card-badge">Coming Soon</div>
+              <h3>Bangalore</h3>
+              <p class="locations__card-area">Tech Corridor</p>
+            </div>
+          </div>
+        </div>
+        <div class="locations__card locations__card--coming animate-on-scroll" data-delay="300">
+          <div class="locations__card-inner">
+            <div class="locations__card-front">
+              <div class="locations__card-badge">Coming Soon</div>
+              <h3>Pune</h3>
+              <p class="locations__card-area">Hinjewadi</p>
+            </div>
+          </div>
+        </div>
+        <div class="locations__card locations__card--coming animate-on-scroll" data-delay="400">
+          <div class="locations__card-inner">
+            <div class="locations__card-front">
+              <div class="locations__card-badge">Coming Soon</div>
+              <h3>Mumbai</h3>
+              <p class="locations__card-area">Andheri</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive India Map -->
+      <div class="india-map animate-on-scroll" data-delay="200">
+        <div class="india-map__card">
+          <div class="india-map__header">
+            <span class="section-tag">Expansion Map</span>
+            <h3 class="india-map__title">Our Growing <span class="text-gold">Footprint</span></h3>
+          </div>
+          <div class="india-map__body">
+            <div class="india-map__visual">
+              <div class="india-map__glow"></div>
+              <svg class="india-map__svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Connection lines (animated dashes) -->
+                <line x1="205" y1="98" x2="230" y2="140" class="india-map__line" stroke="var(--gold)" stroke-width="0.8" stroke-opacity="0.25" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="8" to="0" dur="1.5s" repeatCount="indefinite"/></line>
+                <line x1="195" y1="98" x2="195" y2="108" class="india-map__line" stroke="var(--gold)" stroke-width="0.8" stroke-opacity="0.25" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="8" to="0" dur="1.5s" repeatCount="indefinite"/></line>
+                <line x1="230" y1="140" x2="228" y2="148" class="india-map__line" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.15" stroke-dasharray="3 3"/>
+                <line x1="230" y1="140" x2="190" y2="295" class="india-map__line" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="3 5"><animate attributeName="stroke-dashoffset" from="8" to="0" dur="2s" repeatCount="indefinite"/></line>
+                <line x1="190" y1="295" x2="175" y2="285" class="india-map__line" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="3 5"/>
+                <line x1="190" y1="295" x2="215" y2="355" class="india-map__line" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="3 5"/>
+
+                <!-- India outline — detailed -->
+                <path class="india-map__outline" d="M165,42 C170,38 178,35 185,32 C195,28 205,25 215,22 C228,18 240,20 252,22 C262,24 270,28 280,32 C288,35 295,30 302,28 C308,30 312,35 310,42 C315,48 322,50 325,58 C330,65 328,72 330,80 C335,90 340,95 338,105 C336,112 332,118 330,125 C328,135 332,142 330,152 C326,162 320,168 318,178 C315,185 318,195 315,205 C312,215 305,222 302,232 C298,242 300,252 295,260 C290,268 282,275 280,285 C278,295 282,305 278,312 C272,322 265,328 260,338 C255,348 252,358 245,365 C238,372 230,378 225,388 C220,398 218,408 212,418 C208,425 202,432 198,438 C195,445 195,452 190,458 C185,462 178,458 175,452 C170,442 165,432 162,422 C158,412 152,405 148,395 C142,385 135,378 130,368 C125,358 120,348 118,338 C115,328 108,322 105,312 C102,302 98,292 95,282 C92,272 88,262 90,252 C92,242 98,235 100,225 C102,215 98,205 102,195 C105,185 112,178 115,168 C118,158 115,148 120,140 C125,132 132,125 135,115 C138,108 136,98 140,90 C144,82 150,78 155,70 C158,62 160,48 165,42 Z" stroke="url(#mapGradient)" stroke-width="1.2" fill="url(#mapFill)"/>
+
+                <defs>
+                  <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.6"/>
+                    <stop offset="50%" stop-color="var(--gold-light)" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.6"/>
+                  </linearGradient>
+                  <radialGradient id="mapFill" cx="50%" cy="40%">
+                    <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.08"/>
+                    <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.01"/>
+                  </radialGradient>
+                  <radialGradient id="pinGlow">
+                    <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+
+                <!-- LIVE: Amritsar -->
+                <circle cx="205" cy="90" r="22" fill="url(#pinGlow)" class="india-map__pulse-ring"/>
+                <circle cx="205" cy="90" r="14" fill="url(#pinGlow)" class="india-map__pulse-ring" style="animation-delay:-1s"/>
+                <circle cx="205" cy="90" r="6" fill="var(--gold)" filter="url(#dotGlow)" class="india-map__dot"/>
+                <text x="205" y="78" class="india-map__city" text-anchor="middle">AMRITSAR</text>
+                <text x="205" y="68" class="india-map__pods" text-anchor="middle">57 Pods</text>
+
+                <!-- LIVE: Noida -->
+                <circle cx="230" cy="140" r="22" fill="url(#pinGlow)" class="india-map__pulse-ring"/>
+                <circle cx="230" cy="140" r="14" fill="url(#pinGlow)" class="india-map__pulse-ring" style="animation-delay:-1.5s"/>
+                <circle cx="230" cy="140" r="6" fill="var(--gold)" filter="url(#dotGlow)" class="india-map__dot"/>
+                <text x="245" y="136" class="india-map__city">NOIDA</text>
+                <text x="245" y="147" class="india-map__pods">20 Pods</text>
+
+                <!-- UPCOMING: Katra -->
+                <circle cx="195" cy="108" r="14" fill="url(#pinGlow)" class="india-map__pulse-ring" style="animation-delay:-0.5s"/>
+                <circle cx="195" cy="108" r="4.5" fill="var(--gold-dark)" stroke="var(--gold)" stroke-width="1.5" class="india-map__dot"/>
+                <text x="178" y="105" class="india-map__city india-map__city--sub" text-anchor="end">KATRA</text>
+                <text x="178" y="115" class="india-map__pods india-map__pods--sub" text-anchor="end">27 Pods · Apr '26</text>
+
+                <!-- COMING SOON: Gurugram -->
+                <circle cx="228" cy="148" r="3" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                <text x="240" y="155" class="india-map__city india-map__city--future">Gurugram</text>
+
+                <!-- COMING SOON: Mumbai -->
+                <circle cx="175" cy="285" r="3" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                <text x="162" y="282" class="india-map__city india-map__city--future" text-anchor="end">Mumbai</text>
+
+                <!-- COMING SOON: Pune -->
+                <circle cx="190" cy="295" r="3" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                <text x="202" y="298" class="india-map__city india-map__city--future">Pune</text>
+
+                <!-- COMING SOON: Bangalore -->
+                <circle cx="215" cy="355" r="3" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+                <text x="228" y="358" class="india-map__city india-map__city--future">Bangalore</text>
+
+                <!-- Glow filter -->
+                <defs>
+                  <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="glow"/>
+                    <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            <div class="india-map__info">
+              <div class="india-map__stat-cards">
+                <div class="india-map__stat-card">
+                  <span class="india-map__stat-num">2</span>
+                  <span class="india-map__stat-label">Cities Live</span>
+                  <div class="india-map__stat-bar"><div class="india-map__stat-fill" style="width:29%"></div></div>
+                </div>
+                <div class="india-map__stat-card">
+                  <span class="india-map__stat-num">104</span>
+                  <span class="india-map__stat-label">Total Pods</span>
+                  <div class="india-map__stat-bar"><div class="india-map__stat-fill" style="width:65%"></div></div>
+                </div>
+                <div class="india-map__stat-card">
+                  <span class="india-map__stat-num">7</span>
+                  <span class="india-map__stat-label">Cities Planned</span>
+                  <div class="india-map__stat-bar"><div class="india-map__stat-fill" style="width:100%"></div></div>
+                </div>
+              </div>
+              <div class="india-map__legend">
+                <div class="india-map__legend-row">
+                  <span class="india-map__legend-dot india-map__legend-dot--live"></span>
+                  <span>Live Now</span>
+                </div>
+                <div class="india-map__legend-row">
+                  <span class="india-map__legend-dot india-map__legend-dot--upcoming"></span>
+                  <span>Opening Soon</span>
+                </div>
+                <div class="india-map__legend-row">
+                  <span class="india-map__legend-dot india-map__legend-dot--future"></span>
+                  <span>Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shark Tank Section -->
+  <section class="sharktank" id="sharktank">
+    <div class="sharktank__spotlight"></div>
+    <div class="container">
+      <div class="sharktank__content animate-on-scroll">
+        <div class="sharktank__badge">
+          <svg viewBox="0 0 60 60" width="60" height="60" fill="none">
+            <polygon points="30,2 36,22 56,22 40,34 46,54 30,42 14,54 20,34 4,22 24,22" stroke="var(--gold)" stroke-width="2" fill="var(--gold)" opacity="0.15"/>
+            <polygon points="30,10 34,22 46,22 36,30 40,42 30,34 20,42 24,30 14,22 26,22" fill="var(--gold)" opacity="0.3"/>
+          </svg>
+        </div>
+        <span class="sharktank__label">Official Selection</span>
+        <h2 class="sharktank__title">As Seen on<br><span class="text-gold">Shark Tank India</span></h2>
+        <p class="sharktank__season">Season 5</p>
+        <p class="sharktank__desc">NapTapGo was featured on Shark Tank India Season 5, showcasing India's first scalable affordable luxury pod hotel concept to the nation's top investors.</p>
+        <div class="sharktank__video-thumb">
+          <a href="https://www.youtube.com/watch?v=QK7oSXIW5ao" target="_blank" rel="noopener noreferrer">
+            <img src="images/sharktank-thumb.jpg" alt="NapTapGo on Shark Tank India" loading="lazy">
+            <div class="sharktank__play-btn">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none"><circle cx="24" cy="24" r="23" stroke="var(--gold)" stroke-width="2" fill="rgba(10,10,26,0.7)"/><polygon points="19,14 19,34 36,24" fill="var(--gold)"/></svg>
+            </div>
+          </a>
+        </div>
+        <div class="sharktank__glow-ring"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pod Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Inside NapTapGo</span>
+        <h2 class="section-title">See Our <span class="text-gold">Spaces</span></h2>
+        <p class="section-desc">Real photos from our pod hotels across India</p>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--large animate-on-scroll" data-delay="0">
+          <img src="images/pod-noida.jpg" alt="NapTapGo Noida — Building Exterior at Sunset" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__label">Noida — Sector 63</span>
+          </div>
+        </div>
+        <div class="gallery__item animate-on-scroll" data-delay="100">
+          <img src="images/pod-amritsar.jpg" alt="NapTapGo Amritsar — Heritage Building" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__label">Amritsar — Golden Temple</span>
+          </div>
+        </div>
+        <div class="gallery__item animate-on-scroll" data-delay="200">
+          <img src="images/pod-katra.jpg" alt="NapTapGo Katra Location" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__label">Katra — Opening Soon</span>
+          </div>
+        </div>
+        <div class="gallery__item gallery__item--wide animate-on-scroll" data-delay="150">
+          <img src="images/hero-pod.png" alt="NapTapGo — Pod Corridor, Lounge & Exterior" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__label">The Pod Experience</span>
+          </div>
+        </div>
+        <div class="gallery__item animate-on-scroll" data-delay="250">
+          <img src="images/sharktank-thumb.jpg" alt="NapTapGo Reception & Check-in" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__label">Seamless Check-in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Reviews -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">YouTubers Love Us</span>
+        <h2 class="section-title">Buzz on <span class="text-gold">YouTube</span></h2>
+        <p class="section-desc">See what creators across India are saying about the NapTapGo experience</p>
+      </div>
+    </div>
+    <div class="reviews__carousel">
+      <div class="reviews__track" id="reviewsTrack">
+        <!-- Video 1 -->
+        <a href="https://youtu.be/dKPrhYEvGaY" target="_blank" rel="noopener noreferrer" class="reviews__card animate-on-scroll" data-delay="0">
+          <div class="reviews__thumb">
+            <img src="images/yt-review1.jpg" alt="Exploring Japanese Pod — NapTapGo Noida" loading="lazy">
+            <div class="reviews__play">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.26 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg>
+            </div>
+            <div class="reviews__duration">Exploring Japanese Pod in Noida</div>
+          </div>
+          <div class="reviews__info">
+            <div class="reviews__channel-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <h4>Exploring NapTapGo Pod Hotel</h4>
+              <p>Japanese-style Capsule Experience in Noida</p>
+            </div>
+          </div>
+        </a>
+        <!-- Video 2 -->
+        <a href="https://youtu.be/rEYyuzdAVfo" target="_blank" rel="noopener noreferrer" class="reviews__card animate-on-scroll" data-delay="100">
+          <div class="reviews__thumb">
+            <img src="images/yt-review2.jpg" alt="Japanese Pod Hotel in Noida — NapTapGo" loading="lazy">
+            <div class="reviews__play">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.26 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg>
+            </div>
+            <div class="reviews__duration">Luxury Pod Hotel Vlog</div>
+          </div>
+          <div class="reviews__info">
+            <div class="reviews__channel-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <h4>Japan-Style Pod Hotel in Noida</h4>
+              <p>Luxury Pod Experience &amp; Full Tour</p>
+            </div>
+          </div>
+        </a>
+        <!-- Video 3 -->
+        <a href="https://youtu.be/xD-2PH4s6c4" target="_blank" rel="noopener noreferrer" class="reviews__card animate-on-scroll" data-delay="200">
+          <div class="reviews__thumb">
+            <img src="images/yt-review3.jpg" alt="First Capsule Hotel in Amritsar — NapTapGo" loading="lazy">
+            <div class="reviews__play">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.26 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg>
+            </div>
+            <div class="reviews__duration">First Capsule Hotel in Amritsar!</div>
+          </div>
+          <div class="reviews__info">
+            <div class="reviews__channel-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <h4>First Capsule Hotel in Amritsar</h4>
+              <p>NapTapGo Complete Review &amp; Tour</p>
+            </div>
+          </div>
+        </a>
+        <!-- Video 4 -->
+        <a href="https://youtu.be/lJ_WNopoHb4" target="_blank" rel="noopener noreferrer" class="reviews__card animate-on-scroll" data-delay="300">
+          <div class="reviews__thumb">
+            <img src="images/yt-review4.jpg" alt="Pod Hotel NapTapGo Amritsar Tour" loading="lazy">
+            <div class="reviews__play">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.26 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg>
+            </div>
+            <div class="reviews__duration">Pod Hotel Amritsar — Capsule Tour</div>
+          </div>
+          <div class="reviews__info">
+            <div class="reviews__channel-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <h4>NapTapGo Amritsar — Capsule Hotel</h4>
+              <p>Full Pod Tour &amp; Experience Vlog</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Scroll Arrows -->
+      <button class="reviews__arrow reviews__arrow--left" id="reviewsLeft" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <button class="reviews__arrow reviews__arrow--right" id="reviewsRight" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Guest Love</span>
+        <h2 class="section-title">What Guests <span class="text-gold">Say</span></h2>
+      </div>
+      <div class="testimonials__slider" id="testimonialSlider">
+        <div class="testimonials__track" id="testimonialTrack">
+          <div class="testimonials__slide">
+            <div class="testimonials__card">
+              <div class="testimonials__stars">
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+              </div>
+              <blockquote>"Absolutely blown away by how clean and comfortable the pods are. Booked a 4-hour slot during a layover in Amritsar — woke up feeling completely refreshed. This is the future of travel accommodation!"</blockquote>
+              <div class="testimonials__author">
+                <div class="testimonials__avatar">RK</div>
+                <div>
+                  <strong>Rahul Kapoor</strong>
+                  <span>Business Traveler, Delhi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__card">
+              <div class="testimonials__stars">
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+              </div>
+              <blockquote>"As a solo female traveler, safety was my priority. NapTapGo exceeded expectations — CCTV everywhere, digital locks, and super responsive staff. The pod was spotless with amazing bedding. Already booked my next stay!"</blockquote>
+              <div class="testimonials__author">
+                <div class="testimonials__avatar">PS</div>
+                <div>
+                  <strong>Priya Sharma</strong>
+                  <span>Solo Traveler, Mumbai</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__card">
+              <div class="testimonials__stars">
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+              </div>
+              <blockquote>"Used NapTapGo at the Noida location before my early morning flight. The app-based check-in was seamless, the pod had everything I needed, and it was a fraction of hotel prices. Game changer for budget-conscious professionals."</blockquote>
+              <div class="testimonials__author">
+                <div class="testimonials__avatar">AM</div>
+                <div>
+                  <strong>Arjun Mehta</strong>
+                  <span>Tech Professional, Bangalore</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__slide">
+            <div class="testimonials__card">
+              <div class="testimonials__stars">
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+                <svg viewBox="0 0 20 20" fill="var(--gold)" width="18" height="18"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,19 10,15.5 4.5,19 6,12 1,7.5 7.5,7"/></svg>
+              </div>
+              <blockquote>"Our family visited the Golden Temple and stayed at NapTapGo Amritsar. So convenient! The kids loved the 'spaceship' pods, and the proximity to the temple was unbeatable. Already recommending it to everyone."</blockquote>
+              <div class="testimonials__author">
+                <div class="testimonials__avatar">NS</div>
+                <div>
+                  <strong>Neha Singh</strong>
+                  <span>Family Traveler, Chandigarh</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials__controls">
+          <button class="testimonials__btn testimonials__btn--prev" id="prevBtn" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="testimonials__dots" id="testimonialDots"></div>
+          <button class="testimonials__btn testimonials__btn--next" id="nextBtn" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Flexible Plans</span>
+        <h2 class="section-title">Pay by the <span class="text-gold">Hour</span></h2>
+        <p class="section-desc">No hidden charges. No minimum night stays. Just pay for the time you need.</p>
+      </div>
+      <div class="pricing__grid">
+        <div class="pricing__card animate-on-scroll tilt-3d" data-delay="0">
+          <div class="pricing__card-header">
+            <span class="pricing__card-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="16"/><path d="M20 10v10l5 5"/></svg>
+            </span>
+            <h3>Power Nap</h3>
+            <p class="pricing__duration">2 Hours</p>
+          </div>
+          <div class="pricing__card-price">
+            <span class="pricing__currency">&#8377;</span>
+            <span class="pricing__amount" data-count="399">0</span>
+          </div>
+          <ul class="pricing__card-features">
+            <li>Private Pod Access</li>
+            <li>Fresh Linen</li>
+            <li>Climate Control</li>
+            <li>WiFi & Charging</li>
+            <li>Washroom Access</li>
+          </ul>
+          <a href="#book" class="btn btn--outline btn--full">Select Plan</a>
+        </div>
+        <div class="pricing__card pricing__card--popular animate-on-scroll tilt-3d" data-delay="150">
+          <div class="pricing__card-tag">Most Popular</div>
+          <div class="pricing__card-header">
+            <span class="pricing__card-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="16"/><path d="M20 8v12l6 6"/><path d="M12 4l-2-2M28 4l2-2"/></svg>
+            </span>
+            <h3>Half Day</h3>
+            <p class="pricing__duration">6 Hours</p>
+          </div>
+          <div class="pricing__card-price">
+            <span class="pricing__currency">&#8377;</span>
+            <span class="pricing__amount" data-count="899">0</span>
+          </div>
+          <ul class="pricing__card-features">
+            <li>Everything in Power Nap</li>
+            <li>Complimentary Beverage</li>
+            <li>Towel & Toiletries Kit</li>
+            <li>Luggage Storage</li>
+            <li>Late Extension Available</li>
+          </ul>
+          <a href="#book" class="btn btn--primary btn--full btn--glow">Select Plan</a>
+        </div>
+        <div class="pricing__card animate-on-scroll tilt-3d" data-delay="300">
+          <div class="pricing__card-header">
+            <span class="pricing__card-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="16"/><path d="M14 20a6 6 0 0 1 12 0"/><circle cx="20" cy="12" r="3" fill="currentColor" opacity="0.3"/></svg>
+            </span>
+            <h3>Full Day</h3>
+            <p class="pricing__duration">12 Hours</p>
+          </div>
+          <div class="pricing__card-price">
+            <span class="pricing__currency">&#8377;</span>
+            <span class="pricing__amount" data-count="1499">0</span>
+          </div>
+          <ul class="pricing__card-features">
+            <li>Everything in Half Day</li>
+            <li>Meal Voucher Included</li>
+            <li>Priority Support</li>
+            <li>Flexible Check-in Time</li>
+            <li>Free Extension (1hr)</li>
+          </ul>
+          <a href="#book" class="btn btn--outline btn--full">Select Plan</a>
+        </div>
+        <div class="pricing__card animate-on-scroll tilt-3d" data-delay="450">
+          <div class="pricing__card-header">
+            <span class="pricing__card-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="16"/><path d="M14 24c1-2 3-4 6-4s5 2 6 4"/><circle cx="15" cy="16" r="1.5" fill="currentColor"/><circle cx="25" cy="16" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <h3>Overnight</h3>
+            <p class="pricing__duration">8PM — 10AM</p>
+          </div>
+          <div class="pricing__card-price">
+            <span class="pricing__currency">&#8377;</span>
+            <span class="pricing__amount" data-count="1199">0</span>
+          </div>
+          <ul class="pricing__card-features">
+            <li>Everything in Half Day</li>
+            <li>Evening Snack + Breakfast</li>
+            <li>Wake-up Alarm Service</li>
+            <li>Express Checkout</li>
+            <li>Loyalty Points (2x)</li>
+          </ul>
+          <a href="#book" class="btn btn--outline btn--full">Select Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Franchise CTA -->
+  <section class="franchise" id="franchise">
+    <div class="container">
+      <div class="franchise__content animate-on-scroll">
+        <div class="franchise__text">
+          <span class="section-tag">Partner With Us</span>
+          <h2 class="franchise__title">Own a <span class="text-gold">NapTapGo</span> Franchise</h2>
+          <p class="franchise__desc">Join India's fastest-growing pod hotel chain. Low investment, high returns, and a brand backed by Shark Tank India. We provide complete setup support, technology platform, and operational training.</p>
+          <div class="franchise__highlights">
+            <div class="franchise__highlight">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              <span>Low Initial Investment</span>
+            </div>
+            <div class="franchise__highlight">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>High ROI Model</span>
+            </div>
+            <div class="franchise__highlight">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Complete Training & Support</span>
+            </div>
+            <div class="franchise__highlight">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span>Tech Platform Included</span>
+            </div>
+          </div>
+        </div>
+        <div class="franchise__cta-box">
+          <h3>Ready to Start?</h3>
+          <p>Get the franchise information kit and take the first step toward owning your own NapTapGo property.</p>
+          <a href="#book" class="btn btn--primary btn--glow btn--large">
+            <span>Get Franchise Kit</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p class="franchise__note">Or call us: +91 98XX XXX XXX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Now CTA / Contact -->
+  <section class="book" id="book">
+    <div class="container">
+      <div class="book__content animate-on-scroll">
+        <h2 class="book__title">Ready for the Best <span class="text-gold">Rest</span> of Your Life?</h2>
+        <p class="book__desc">Book your pod in under 60 seconds. Flexible cancellation. Instant confirmation.</p>
+        <a href="https://www.naptapgo.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--glow btn--large">
+          <span>Book Your Pod Now</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="footer__logo">
+            <span class="nav__logo-nap">Nap</span><span class="nav__logo-tap">Tap</span><span class="nav__logo-go">Go</span>
+          </a>
+          <p class="footer__tagline">Cosy Nap &middot; Fresh Tap &middot; Ready to Go</p>
+          <p class="footer__brand-desc">India's new age affordable luxury pod hotel chain. Smart stays by the hour, designed for the modern traveler.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram" class="footer__social-link">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="footer__social-link">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/><path d="M4 4h4l12 16h-4z" fill="currentColor" opacity="0.1"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-link">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 1-2 2-2s2 1 2 2v5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="footer__social-link">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="4"/><polygon points="10,8 16,12 10,16" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#experience">Pod Experience</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#franchise">Franchise</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="#locations">Noida — Sector 63</a></li>
+            <li><a href="#locations">Amritsar — Golden Temple</a></li>
+            <li><a href="#locations">Katra — Coming Soon</a></li>
+            <li><a href="#locations">Gurugram — Coming Soon</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              hello@naptapgo.com
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +91 98XX XXX XXX
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Multiple locations across India
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 NapTapGo. All rights reserved. | New Age Affordable Luxury</p>
+        <p class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cancellation Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919999999999?text=Hi%20NapTapGo!%20I%20want%20to%20book%20a%20pod." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" id="whatsappBtn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.004 0C7.165 0 .002 7.163.002 16c0 2.825.737 5.574 2.137 7.998L.014 32l8.204-2.1A15.92 15.92 0 0 0 16.004 32C24.837 32 32 24.837 32 16S24.837 0 16.004 0zm0 29.19a13.15 13.15 0 0 1-6.713-1.84l-.48-.286-4.987 1.276 1.332-4.868-.312-.498A13.14 13.14 0 0 1 2.812 16c0-7.27 5.918-13.19 13.192-13.19S29.19 8.73 29.19 16s-5.917 13.19-13.186 13.19zm7.235-9.872c-.396-.198-2.34-1.155-2.703-1.287-.363-.132-.627-.198-.891.198s-1.023 1.287-1.254 1.551c-.231.264-.462.297-.858.099-.396-.198-1.672-.616-3.186-1.965-1.177-1.05-1.971-2.346-2.202-2.742-.231-.396-.024-.611.174-.808.178-.177.396-.462.594-.693.198-.231.264-.396.396-.66.132-.264.066-.495-.033-.693-.099-.198-.891-2.148-1.221-2.94-.321-.771-.648-.666-.891-.678l-.759-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.828 1.617 4.092c.198.264 2.793 4.26 6.768 5.976.945.408 1.683.651 2.259.834.948.3 1.812.258 2.493.156.762-.114 2.34-.957 2.67-1.881.33-.924.33-1.716.231-1.881-.099-.165-.363-.264-.759-.462z"/></svg>
+    <span class="whatsapp-btn__pulse"></span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
